@@ -1,10 +1,11 @@
 {
-    "version": 2,
-    "name": "wear-view",
-    "builds": [
-       { "src": "index.js", "use": "@vercel/node" }
-    ],
-    "routes": [
-       { "src": "/(.*)", "dest": "/index.js" }
-    ]
- }
+   "version": 2,
+   "name": "wear-view",
+   "builds": [
+      { "src": "index.js", "use": "@vercel/node" }
+   ],
+   "installCommand": "npm install --force",
+   "routes": [
+      { "src": "/(.*)", "dest": "/index.js" }
+   ]
+}
