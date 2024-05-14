@@ -49,6 +49,7 @@ router.get("/cards/:id", cardController.getCardById);
 router.post("/cards/editCard",parser.single('image'), cardController.editCard)
 router.put("/cards/:id", cardController.updateCard);
 router.get("/cards", cardController.getCards);
+router.delete("/cards/:id", cardController.deleteCard);
 
 // Message-related Routes
 

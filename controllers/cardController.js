@@ -118,3 +118,18 @@ exports.getCards = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error', message: error.message });
     }
 };
+
+exports.deleteCard = async (req, res) => {
+    try {
+        const result = await Card.deleteOne({ _id: req.params.id });
+
+        if (result.deletedCount === 0) {
+            return res.status(404).json({ error: "Card not found" });
+        }
+
+        res.status(200).json({ message: "Card deleted successfully" });
+    } catch (error) {
+        console.error("Error deleting card:", error);
+        res.status(500).json({ error: 'Internal Server Error', message: error.message });
+    }
+};
