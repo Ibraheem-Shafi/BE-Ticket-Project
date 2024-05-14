@@ -12,14 +12,14 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
     cors: {
-        origin: "https://fe-ticket-project.vercel.app/",  // Allow only this origin to connect
+        origin: "https://fe-ticket-project.vercel.app",  // Allow only this origin to connect
         methods: ["GET", "POST"],        // Allowed methods
         credentials: true                 // Allow credentials
     }
 });
 
 app.use(cors({
-    origin: 'https://fe-ticket-project.vercel.app/',    // Allow this domain
+    origin: 'https://fe-ticket-project.vercel.app',    // Allow this domain
     credentials: true                   // Allow credentials
 }));
 
