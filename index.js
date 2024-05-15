@@ -11,10 +11,16 @@ const Message = require('./models/messageSchema');
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
-    cors: {}
+    cors: {
+        origin: "https://fe-ticket-project.vercel.app",  // Allow only this origin to connect
+        credentials: true                 // Allow credentials
+    }
 });
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://fe-ticket-project.vercel.app',    // Allow this domain
+    credentials: true                   // Allow credentials
+}));
 
 app.use(express.json());
 app.use(Routes);
