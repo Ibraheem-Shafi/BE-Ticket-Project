@@ -1,21 +1,11 @@
 {
    "version": 2,
+   "name": "wear-view",
    "builds": [
-     {
-       "src": "./index.js",
-       "use": "@vercel/node"
-     }
+      { "src": "index.js", "use": "@vercel/node" }
    ],
+   
    "routes": [
-     {
-       "src": "/(.*)",
-       "dest": "./index.js",
-       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-       "headers": {
-         "Access-Control-Allow-Origin": "https://fe-ticket-project.vercel.app",
-         "Access-Control-Allow-Credentials": "true"
-       }
-     }
+      { "src": "/(.*)", "dest": "/index.js" }
    ]
- }
- 
+}
