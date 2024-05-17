@@ -11,9 +11,13 @@ exports.getAllUsers = async (req, res) => {
 };
 
 exports.userLogin = async (req, res) => {
+    console.log("user login started");
     try {
+        console.log(password);
+        console.log(name);
         const { password, name } = req.body;
         let userData = await User.findOne({ name });
+        console.log(userData);
         if (!userData) {
             return res.status(400).json({ error: "User not found. Please ensure you are using the right credentials" });
         }
